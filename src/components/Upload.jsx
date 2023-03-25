@@ -3,10 +3,13 @@ import { BsUpload } from "react-icons/bs";
 function Upload() {
   const [selected, setSelected] = useState(null);
 
+  // handles file input upload logic
   const handleChange = (event) => {
     const file = event.target.files[0];
-    const reader = new FileReader();
 
+    // uses File object to read and store file contents to localStorage
+    const reader = new FileReader();
+    // Checks to see if file is jpeg or png only
     if (file.type === "image/jpeg" || file.type === "image/png") {
       reader.onload = function () {
         const imageBase64 = reader.result;
@@ -20,6 +23,7 @@ function Upload() {
     }
   };
 
+  //useEffect needed to get localStorage item "Image" and sets it as selected image upon refresh
   useEffect(() => {
     const checkStorage = localStorage.getItem("Image");
     if (checkStorage) {

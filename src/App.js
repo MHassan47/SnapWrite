@@ -9,7 +9,7 @@ function App() {
   const [savedText2, setSavedText2] = useState(
     "This is a text box and the first line is programmed to hold exactly 20 words, after the limit is\n \nreached, the next paragraph will begin. The text box is limited to three paragraphs each containing 20, 25, and 10 words respectively. After the word\n\nlimit of 55 total words, user must remove words."
   );
-  console.log(savedText1, savedText2);
+
   return (
     <div
       className="App"
